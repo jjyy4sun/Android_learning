@@ -3,9 +3,12 @@ package com.doublek.timefinger
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+
+private val TAG = MainActivity::class.java.simpleName
 
 class MainActivity : AppCompatActivity() {
     private lateinit var gameScoreTextView: TextView
@@ -21,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d(TAG, "onCreate called.Score is: $score")
 
         // connect views to variables
         gameScoreTextView = findViewById(R.id.game_score_text_view)
